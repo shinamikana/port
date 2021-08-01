@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+
+.page1{
+    height:100px;
+    width:100px;
+    background-color: black;
+}
+
+.page2{
+    height:100%;
+    width:100%;
+    background-color:red;
+}
+
+.page3{
+    height:100%;
+    width:100%;
+    background-color:yellow;
+}
+
+.page4{
+    height:100%;
+    width:100%;
+    background-color: blue;
+}
+
+.page5{
+    height:100%;
+    width:100%;
+    background-color: green;
+}
