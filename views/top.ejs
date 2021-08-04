@@ -6,27 +6,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/top.css">
     <title>TOP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
-    <div class="page1">
-        a
+    <div class="page1" id="page1">
+    <img src="/images/publicdomainq-0053249agt.jpg" alt="" id="page1img">
+     <div id="search"><span id="typewrite"></span><button onclick="hiden()">Search</button></div>
+     <h1 id="teach">I'll teach you</h1>
+     <i class="fas fa-chevron-down" id="arrow"></i>
     </div>
 
-    <div class="page2">
-        a
+    <div class="page2 afterPage">
+        <h1>WORK</h1>
+        <div class="work">
+            <div id="rtable" class="works">
+               <a href="https://round-table-sns.herokuapp.com/">
+                  <h2>ROUND TABLE</h2>
+                  <img src="/images/rtable.png" alt="">
+              </a>
+            </div>
+              <div id="unknown1" class="works">
+                <h2>Coming soon...</h2>
+                <img src="/imges/noImg.jpeg" alt="">
+              </div>
+              <div id="unknown2" class="works">
+                <h2>Coming soon...</h2>
+                <img src="/imges/noImg.jpeg" alt="">
+              </div>
+        </div>
     </div>
 
-    <div class="page3">
-        a
-    </div>
-
-    <div class="page4">
-        a
-    </div>
-
-    <div class="page5">
-        a   
-    </div>
+    <div class="page3 afterPage">
     
+    </div>
+
+    <div class="page4 afterPage">
+    
+    </div>
+
+    <div class="page5 afterPage">
+    
+    </div>
+    <script>
+        const typewriter = (param)=>{
+            let el = document.querySelector(param.el);
+            let speed = param.speed;
+            let string = param.string.split('');
+
+            string.forEach((char, index) => {
+               setTimeout(() => {
+               el.textContent += char;
+             }, speed * index);
+            });
+        }
+
+        typewriter({
+            el:'#typewrite',
+            string:'Kenji Iwasaki Who?',
+            speed:150,
+        });
+        
+        let teach = document.getElementById('teach');
+        let arrow = document.getElementById('arrow');
+        let search = document.getElementById('search');
+        search.style.opacity = 1;
+        const hiden = ()=>{
+            search.style.opacity -= 0.1;
+            const timer = setTimeout(hiden,50);
+            console.log(search.style.opacity);
+            if(search.style.opacity == 0){
+                clearTimeout(timer);
+                teach.classList.add('fade');
+                show();
+            }
+        }
+
+        let after = document.getElementsByClassName('afterPage');
+        let page1img = document.getElementById('page1img');
+        let afterLen = 0;
+        const show = ()=>{
+            after[afterLen].style.display = 'block';
+            afterLen++;
+            const timer2 = setTimeout(show,300);
+            if(afterLen == after.length){
+                clearTimeout(timer2);
+                arrow.style.opacity = 0.8;
+                page1img.classList.add('fade');
+            }
+        }
+
+        const scrollEvent = ()=>{
+            window.addEventListener('scroll',()=>{
+                let scrollValue = window.pageYOffset;
+                let scrollEle = document.getElementById('rtable');
+                let scrollTop = scrollEle.getBoundingClientRect().top + scrollValue;
+                let windowHeight = window.innerHeight;
+                if(scrollValue > scrollTop - windowHeight + 150){
+                    slideShow();
+                }
+            });
+        }
+
+        let works = document.getElementsByClassName('works');
+        let worksLen = 0;
+        const slideShow = ()=>{
+            works[worksLen].classList.add('slideShow');
+            worksLen++;
+            const timer3 = setTimeout(slideShow,8000);
+            if(worksLen == works.lenght){
+                clerTimeout(timer3);
+            }
+        }
+
+        scrollEvent();
+    </script>
 </body>
 </html>
