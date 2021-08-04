@@ -178,7 +178,7 @@ html,body{
     width:400px;
     border:1px solid gray;
     text-align: center;
-    transform:translate(300px,0);
+    transform:translate(150px,0);
     opacity:0;
 }
 
@@ -188,7 +188,7 @@ html,body{
     width:400px;
     border:1px solid gray;
     text-align: center;
-    transform:translate(300px,0);
+    transform:translate(150px,0);
     opacity:0;
 }
 
@@ -198,7 +198,7 @@ html,body{
     width:400px;
     border:1px solid gray;
     text-align: center;
-    transform:translate(300px,0);
+    transform:translate(150px,0);
     opacity:0;
 }
 
@@ -209,7 +209,7 @@ html,body{
 @keyframes slideUp{
     from{
         opacity:0;
-        transform:translate(300px,0);
+        transform:translate(150px,0);
     }
     to{
         opacity:1;
