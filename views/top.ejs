@@ -20,7 +20,18 @@
     </div>
 
     <div class="page2 afterPage">
-        <h1>WORK</h1>
+        <h1>PROFILE</h1>
+        <div class="icon">
+            <img src="/images/1.jpg" alt="">
+        </div>
+
+        <div class="text">
+            <s>Maybe he is</s><p>Kenji Iwasaki</p>
+        </div>
+    </div>
+
+    <div class="page3 afterPage">
+        <h1>WORKS</h1>
         <div class="work">
             <div id="rtable" class="works">
                <a href="https://round-table-sns.herokuapp.com/">
@@ -30,25 +41,48 @@
             </div>
               <div id="unknown1" class="works">
                 <h2>Coming soon...</h2>
-                <img src="/imges/noImg.jpeg" alt="">
+                <img src="/images/noImg.jpeg" alt="">
               </div>
               <div id="unknown2" class="works">
                 <h2>Coming soon...</h2>
-                <img src="/imges/noImg.jpeg" alt="">
+                <img src="/images/noImg.jpeg" alt="">
               </div>
         </div>
     </div>
 
-    <div class="page3 afterPage">
-    
-    </div>
-
     <div class="page4 afterPage">
-    
+        <h1>CONTACT</h1>
+        <div class="info">
+          <i class="fas fa-envelope"></i>
+          <p id="name">iwasaki.web7110@gmail.com</p>
+          <a href="https://twitter.com/tunanikan"><i class="fab fa-twitter-square"></i></a>
+          <p>@tunanikan</p>
+        </div>
     </div>
 
     <div class="page5 afterPage">
+
+        <div class="wrapper"></div>
+        <div class="rainbow">
+            <div class="sky"></div>
+            <div class="purple"></div>
+            <div class="ai"></div>
+            <div class="blue"></div>
+            <div class="green"></div>
+            <div class="yellow"></div>
+            <div class="daidai"></div>
+            <div class="red"></div>
+        </div>
+
+        <div class="round">
+            <!--copy right-->
+        </div>
     
+    </div>
+
+    <div class="rains">
+        <span class="rain r1">|</span><span class="rain r2">|</span><span class="rain r3">|</span><span class="rain r4">|</span>
+        <span class="rainw rw1">●</span><span class="rainw rw2">●</span><span class="rainw rw3">●</span><span class="rainw rw4">●</span>
     </div>
     <script>
         const typewriter = (param)=>{
@@ -94,7 +128,7 @@
             if(afterLen == after.length){
                 clearTimeout(timer2);
                 arrow.style.opacity = 0.8;
-                page1img.classList.add('fade');
+                page1img.classList.add('page1imgFade');
             }
         }
 
