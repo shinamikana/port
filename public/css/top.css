@@ -38,7 +38,7 @@ html,body{
 }
 
 .fade{
-    animation:fade 2s ease 0s 1 forwards;
+    animation:fade 1s ease 0s 1 forwards;
 }
 
 @keyframes fade{
@@ -157,7 +157,7 @@ html,body{
     position: relative;
     height:100%;
     width:100%;
-    background-color:gray;
+    background-color:dimgray;
     padding-top:50px;
     font-family: 'IBM Plex Mono', monospace;
 }
@@ -179,7 +179,7 @@ html,body{
     width:40%;
     margin-left:auto;
     margin-right:auto;
-    margin-top:100px;
+    margin-top:50px;
 }
 
 .page2 .text{
@@ -291,12 +291,13 @@ html,body{
     width:390px;
     height:230px;
     opacity:0.7;
+    object-fit: cover;
 }
 
 .page4{
     height:100%;
     width:100%;
-    background-color: gray;
+    background-color: darkgray;
     text-align: center;
 }
 
@@ -338,41 +339,34 @@ html,body{
     height:100%;
     width:100%;
     z-index:1;
-    background-color: aliceblue;
+    background-color: forestgreen;
     width:100%;
 }
 
-.wrapper{
-    position:absolute;
-    z-index:10;
-    height:100%;
-    width:100%;
-    opacity:0.6;
-    background-color:azure;
-}
-
-.round{
+.rainbow{
     position: absolute;
     bottom:0;
     left:0;
     right:0;
     margin:0 auto;
-    background-color: silver;
-    border-radius: 40%;
-    width:100%;
-    height:200px;
-    opacity:1;
-    z-index:9;
+    transform:scale(80%);
 }
-
 
 .sky{
     position: absolute;
-    bottom:150px;
+    top:0;
+    width:100%;
+    height:50%;
+    background-color: skyblue;
+}
+
+.skyr{
+    position: absolute;
+    bottom:0;
     left:0;
     right:0;
     margin:0 auto;
-    background-color: aliceblue;
+    background-color: skyblue;
     height:150px;
     width:300px;
     border-radius:150px 150px 0 0;
@@ -381,7 +375,7 @@ html,body{
 
 .purple{
     position: absolute;
-    bottom:150px;
+    bottom:0;
     left:0;
     right:0;
     margin:0 auto;
@@ -394,7 +388,7 @@ html,body{
 
 .ai{
     position: absolute;
-    bottom:150px;
+    bottom:0;
     left:0;
     right:0;
     margin:0 auto;
@@ -407,7 +401,7 @@ html,body{
 
 .blue{
     position: absolute;
-    bottom:150px;
+    bottom:0;
     left:0;
     right:0;
     margin:0 auto;
@@ -420,7 +414,7 @@ html,body{
 
 .green{
     position: absolute;
-    bottom:150px;
+    bottom:0;
     left:0;
     right:0;
     margin:0 auto;
@@ -433,7 +427,7 @@ html,body{
 
 .yellow{
     position: absolute;
-    bottom:150px;
+    bottom:0;
     left:0;
     right:0;
     margin:0 auto;
@@ -446,7 +440,7 @@ html,body{
 
 .daidai{
     position: absolute;
-    bottom:150px;
+    bottom:0;
     left:0;
     right:0;
     margin:0 auto;
@@ -459,7 +453,7 @@ html,body{
 
 .red{
     position: absolute;
-    bottom:150px;
+    bottom:0;
     left:0;
     right:0;
     margin:0 auto;
@@ -470,7 +464,20 @@ html,body{
     z-index:1;
 }
 
+.round{
+    position: absolute;
+    bottom:0;
+    width:100%;
+    height:100px;
+    background-color:gray;
+    border-radius: 30%;
+}
+
 .afterPage{
+    display:none;
+}
+
+#rains{
     display:none;
 }
 

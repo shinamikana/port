@@ -27,6 +27,7 @@
 
         <div class="text">
             <s>Maybe he is</s><p>Kenji Iwasaki</p>
+            <p>1994/09/27-</p>
         </div>
     </div>
 
@@ -40,12 +41,12 @@
               </a>
             </div>
               <div id="unknown1" class="works">
-                <h2>Coming soon...</h2>
-                <img src="/images/noImg.jpeg" alt="">
+                <h2>soon</h2>
+                <img src="/images/q.png" alt="">
               </div>
               <div id="unknown2" class="works">
-                <h2>Coming soon...</h2>
-                <img src="/images/noImg.jpeg" alt="">
+                <h2>soon</h2>
+                <img src="/images/q.png" alt="">
               </div>
         </div>
     </div>
@@ -61,26 +62,23 @@
     </div>
 
     <div class="page5 afterPage">
-
-        <div class="wrapper"></div>
-        <div class="rainbow">
-            <div class="sky"></div>
-            <div class="purple"></div>
-            <div class="ai"></div>
-            <div class="blue"></div>
-            <div class="green"></div>
-            <div class="yellow"></div>
-            <div class="daidai"></div>
-            <div class="red"></div>
+        <div class="sky">
+            <div class="rainbow">
+                <div class="skyr"></div>
+                <div class="purple"></div>
+                <div class="ai"></div>
+                <div class="blue"></div>
+                <div class="green"></div>
+                <div class="yellow"></div>
+                <div class="daidai"></div>
+                <div class="red"></div>
+            </div>
         </div>
 
-        <div class="round">
-            <!--copy right-->
-        </div>
-    
+        <div class="round"></div>
     </div>
 
-    <div class="rains">
+    <div id="rains">
         <span class="rain r1">|</span><span class="rain r2">|</span><span class="rain r3">|</span><span class="rain r4">|</span>
         <span class="rainw rw1">●</span><span class="rainw rw2">●</span><span class="rainw rw3">●</span><span class="rainw rw4">●</span>
     </div>
@@ -100,12 +98,13 @@
         typewriter({
             el:'#typewrite',
             string:'Kenji Iwasaki Who?',
-            speed:150,
+            speed:100,
         });
         
         let teach = document.getElementById('teach');
         let arrow = document.getElementById('arrow');
         let search = document.getElementById('search');
+        let rain = document.getElementById('rains');
         search.style.opacity = 1;
         const hiden = ()=>{
             search.style.opacity -= 0.1;
@@ -115,6 +114,7 @@
                 clearTimeout(timer);
                 teach.classList.add('fade');
                 show();
+                rain.style.display = 'block';
             }
         }
 
