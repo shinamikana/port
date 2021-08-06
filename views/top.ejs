@@ -91,18 +91,12 @@
         let arrow = document.getElementById('arrow');
         let search = document.getElementById('search');
         let rain = document.getElementById('rains');
-        search.style.opacity = 1;
         const hiden = ()=>{
-            search.style.opacity -= 0.1;
-            const timer = setTimeout(hiden,50);
-            console.log(search.style.opacity);
-            if(search.style.opacity == '0'){
-                clearTimeout(timer);
+                search.classList.add('fadeOut');
                 teach.classList.add('fade');
                 show();
                 rain.style.display = 'block';
             }
-        }
 
         let after = document.getElementsByClassName('afterPage');
         let page1img = document.getElementById('page1img');
