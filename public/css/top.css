@@ -594,4 +594,12 @@ html,body{
     .rainw{
         transform: scale(30%);
     }
+
+    .r1{
+        left:30px;
+    }
+
+    .r3{
+        left:110px;
+    }
 }
