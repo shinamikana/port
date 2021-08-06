@@ -486,3 +486,53 @@ html,body{
         top:100%;
     }
 }
+
+@media(max-width:378px){
+
+    #teach{
+        text-align: center;
+    }
+
+    #search{
+        transform: scale(50%);
+        width:550px;
+        left:-80px;
+    }
+
+    .page1{
+        position: relative;
+        width:100%;
+    }
+
+    #page1img{
+        width:100%;
+        object-fit:cover;
+    }
+
+    .icon img{
+        height:70%;
+        width:70%;
+    }
+
+    .work{
+        left:-415px;
+        transform: scale(30%);
+    }
+
+    .info{
+        width:80%;
+    }
+
+    .info p{
+        font-size:15px;
+        text-align: center;
+    }
+
+    .round{
+        height:50px;
+    }
+
+    .ground{
+        height:50px;
+    }
+}
