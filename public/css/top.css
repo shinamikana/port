@@ -451,6 +451,7 @@ html,body{
     top:500px;
     right:200px;
     animation:rainwing 4.58s ease 0.8s infinite forwards;
+    z-index:10;
 }
 
 .rw3{
