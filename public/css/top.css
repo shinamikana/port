@@ -465,6 +465,7 @@ html,body{
     top:100px;
     font-size:30px;
     animation:rainwing 4s ease 0.7s infinite forwards;
+    z-index:10;
 }
 
 .rw5{
