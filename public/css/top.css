@@ -537,6 +537,10 @@ html,body{
         width:100%;
     }
 
+    .icon{
+        margin-top:0;
+    }
+
     .icon img{
         height:70%;
         width:70%;
@@ -652,7 +656,6 @@ html,body{
     }
 
     .icon img{
-        margin-top:250px;
         height:70%;
         width:70%;
     }
@@ -660,10 +663,6 @@ html,body{
     .info{
         margin-top:200px;
         width:80%;
-    }
-
-    .info p{
-        font-size:18px;
     }
 
     .r5{
@@ -719,7 +718,6 @@ html,body{
     }
 
     .icon img{
-        margin-top:250px;
         height:70%;
         width:70%;
     }
@@ -729,7 +727,4 @@ html,body{
         width:80%;
     }
 
-    .info p{
-        font-size:22px;
-    }
 }
