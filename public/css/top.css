@@ -406,9 +406,12 @@ html,body{
 
 @keyframes rainwing{
     from{
+        margin-top:0;
         opacity:0.2;
     }
     to{
+        margin-top:200px;
+        font-size:0;
         opacity:0;
     }
 }
