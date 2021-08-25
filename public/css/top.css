@@ -243,7 +243,7 @@ html,body{
     margin-left:auto;
     margin-right:auto;
     margin-top:300px;
-    width:1200px;
+    width:1180px;
     border:1px solid black;
     z-index:1;
 }
@@ -263,7 +263,7 @@ html,body{
     opacity:0;
 }
 
-#unknown1{
+#rtablePHP{
     display: inline-block;
     height:300px;
     width:400px;
@@ -305,11 +305,13 @@ html,body{
     border-bottom:1px solid black;
     font-family: 'IBM Plex Mono', monospace;
     color:white;
+    margin-bottom:0;
+    letter-spacing: 2px;
 }
 
 .work img{
     width:390px;
-    height:230px;
+    height:260px;
     opacity:0.7;
     object-fit: cover;
 }
@@ -547,8 +549,11 @@ html,body{
     }
 
     .work{
+        margin-top:100px;
         width:200px;
-        height:200px;
+        display:flex;
+        flex-flow: column;
+        height:380px !important;
     }
 
     .works{
@@ -557,21 +562,24 @@ html,body{
     }
 
     #rtable{
-        height:200px;
+        height:190px !important;
+    }
+
+    #rtablePHP{
+        margin:0;
+        padding:0;
+        width:300px;
+        height:190px;
     }
 
     .works h2{
         font-size:20px;
     }
 
-    .works img{
-        height:170px !important;
-        width:300px;
+    .work img{
+        width:297px !important;
         padding:0;
-    }
-
-    #unknown1{
-        display: none;
+        margin:0;
     }
 
     #unknown2{
