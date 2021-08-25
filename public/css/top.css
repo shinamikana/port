@@ -549,7 +549,7 @@ html,body{
     }
 
     .work{
-        margin-top:100px;
+        bottom:100px;
         width:200px;
         display:flex;
         flex-flow: column;
