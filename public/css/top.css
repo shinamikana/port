@@ -241,6 +241,10 @@ html,body{
     font-weight:bold;
 }
 
+#mobileName{
+    display:none;
+}
+
 @keyframes flas-light{
     0%{opacity:1;}
     24% {opacity:1;}
