@@ -685,7 +685,8 @@ html,body{
     }
 }
 
-@media(max-width:378px){
+
+@media(max-width:390px){
 
     #teach{
         text-align: center;
