@@ -184,11 +184,11 @@
                 const timerJs = setTimeout(jsSlide,100);
                 if(i === -1){
                     clearTimeout(timerJs);
-                    $('#jquery').slideDown(500).delay(300).queue(function(){
+                    $('#jquery').delay(200).slideDown(500).delay(300).queue(function(){
                         $('#exMark').hide();
                         $(this).addClass('jqslide').dequeue();
                     });
-                    $('#exMark').show(100);
+                    $('#exMark').delay(500).show(100);
                 }
             }
 
