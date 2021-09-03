@@ -149,15 +149,13 @@ html,body{
     width:50px;
     line-height: 50px;
     text-align: center;
-    background-color:black;
-    border-radius: 50%;
     opacity:0;
-    color:white;
-    animation: fadeIn 1s ease -2s infinite alternate;
+    color:black;
+    animation: upDown 0.7s ease 0s infinite alternate;
     z-index:50;
 }
 
-@keyframes fadeIn {
+@keyframes upDown {
     0% {
         bottom:20px;
     }
@@ -168,7 +166,7 @@ html,body{
 
 .page2{
     position: relative;
-    height:100%;
+    height:200%;
     width:100%;
     background-color:gray;
     font-family: 'IBM Plex Mono', monospace;
@@ -184,38 +182,85 @@ html,body{
 
 .icon{
     text-align: center;
+    background-image: url(/images/1.jpg);
+    background-size:cover;
+    width:100%;
+    height:600px;
+    position: relative;
+    border:50px solid gray;
 }
 
 .icon img{
     height:40%;
-    width:40%;
+    width:90%;
     margin-left:auto;
     margin-right:auto;
     margin-top:50px;
+    object-fit: cover;
 }
 
-.page2 .text{
-    margin-top:10px;
+.page2 .text p{
+    margin:0;
+    padding:0;
+    width:50%;
+    background-color:black;
     font-size:35px;
-    font-family: 'IBM Plex Mono', monospace;
+    border:1px solid gray;
     text-align: center;
     color:white;
     letter-spacing: 1px;
     font-weight: lighter;
 }
 
-.text p{
-    margin:0;
-    padding:0;
+.text{
+    display:flex;
+    flex-wrap: wrap;
 }
 
-.text s{
-    font-size:19px;
+#maybe{
+    font-size:35px;
     line-height:15px;
+    font-family: 'Shadows Into Light', cursive;
+    color:black;
+    position: relative;
+    top:0;
 }
 
 .text #year{
     font-size:23px;
+}
+
+#name{
+    position: absolute;
+    top:30px;
+    left:510px;
+    font-size:51px;
+    color:black;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 2px;
+    font-weight:bold;
+}
+
+@keyframes flas-light{
+    0%{opacity:1;}
+    24% {opacity:1;}
+    25% {opacity:0.1;}
+    26% {opacity:1;}
+    50%  {opacity: 1;}
+    51%  {opacity: 0.1;}
+    52%  {opacity: 1;}
+    75% {opacity: 1;}
+    76% {opacity: 0.1;}
+    77% {opacity: 1;}
+    78% {opacity: 0.3;}
+    79% {opacity: 1;}
+}
+
+#all{
+    position: absolute;
+    bottom:0;
+    right:200px;
+    font-size:30px;
 }
 
 .page3{
@@ -223,6 +268,121 @@ html,body{
     height:100%;
     width:100%;
     background-color:gray;
+}
+
+#skillh2{
+    margin-top:100px;
+    font-size:50px;
+    text-align: center;
+    color:white;
+    background-color: black;
+}
+
+.skill{
+    display:flex;
+    width:100%;
+    flex-wrap:wrap;
+    text-align: center;
+    margin-top:100px;
+    position: relative;
+}
+
+.skill div{
+    height:60px;
+    width:50%;
+    border:1px solid gray;
+    background-color:black;
+    color:white;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size:40px;
+    margin:50px 0;
+}
+
+#js span{
+    position: relative;
+    right:500px;
+}
+
+.jsSkill{
+    animation: jsSlide 0.2s ease 0s 1 forwards;
+}
+
+@keyframes jsSlide{
+    0%{
+        right:500px;
+    }
+
+    100%{
+        right:0;
+    }
+}
+
+#jqueryDiv{
+    position: relative;
+    text-align: center;
+}
+
+#jquery{
+    position: absolute;
+    left:0;
+    right:0;
+    display:none;
+}
+
+.jqslide{
+    animation: jquerySlide 7s ease 0s 1 forwards;
+}
+
+@keyframes jquerySlide{
+    0%{
+        left:0;
+        right:0;
+    }
+
+    10%{
+        right:0%;
+        left:60%;
+    }
+
+    20%{
+        left:0%;
+        right:60%;
+    }
+
+    30%{
+        right:0%;
+        left:60%;
+    }
+
+    50%{
+        left:0%;
+        right:60%;
+        font-size:40px;
+    }
+
+    55%{
+        font-size: 48px;
+    }
+
+    65%{
+        left:0%;
+        right:60%;
+        font-size:40px;
+    }
+
+
+    80%{
+        left:0;
+        right:0;
+    }
+}
+
+#exMark{
+    position: absolute;
+    bottom:55px;
+    font-size: 50px;
+    display: none;
+    color:black;
 }
 
 .page3 h1{
@@ -357,11 +517,15 @@ html,body{
     margin-top:50px;
 }
 
+.fa-twitter-square:hover{
+    color:green;
+}
+
 .info a{
     color:black;
 }
 
-#name{
+#email{
     margin-bottom:50px;
 }
 
@@ -370,7 +534,7 @@ html,body{
     bottom:10px;
     z-index:5;
     width:100%;
-    height:150px;
+    height:100px;
     background-color:dimgray;
     border-radius: 50%;
 }
@@ -380,7 +544,7 @@ html,body{
     bottom:0;
     background-color:gray;
     width:100%;
-    height:150px;
+    height:100px;
     z-index:5;
 }
 
@@ -552,8 +716,14 @@ html,body{
         width:100%;
     }
 
+    .icon p{
+        display:none;
+    }
+
     .icon{
-        margin-top:0;
+        border:none;
+        width:100%;
+        height:150px;
     }
 
     .icon img{
@@ -561,36 +731,101 @@ html,body{
         width:70%;
     }
 
+    #mobileName{
+        width:100%;
+    }
+
+    .page2 .text p{
+        width:100%;
+        font-size:20px;
+    }
+
     .work{
         top:100px;
         width:200px;
         display:flex;
         flex-flow: column;
-        height:380px !important;
+        height:300px !important;
     }
 
-    .works{
-        width:200px;
+    .skill div{
+        height:50px;
+        font-size:30px;
+        width:100%;
+    }
+
+    @keyframes jquerySlide{
+        0%{
+            left:0;
+            right:0;
+        }
+    
+        10%{
+            right:0%;
+            left:60%;
+        }
+    
+        20%{
+            left:0%;
+            right:60%;
+        }
+    
+        30%{
+            right:0%;
+            left:60%;
+        }
+    
+        50%{
+            left:0%;
+            right:60%;
+            font-size:30px;
+        }
+    
+        55%{
+            font-size: 38px;
+        }
+    
+        65%{
+            left:0%;
+            right:60%;
+            font-size:30px;
+        }
+    
+    
+        80%{
+            left:0;
+            right:0;
+        }
+    }
+
+    #exMark{
+        font-size: 50px;
+    }
+
+    .work{
+        width:200px !important;
         height:auto;
     }
 
     #rtable{
-        height:190px !important;
+        height:150px !important;
+        width:200px !important;
     }
 
     #rtablePHP{
         margin:0;
         padding:0;
-        width:300px;
-        height:190px;
+        width:200px;
+        height:150px;
     }
 
     .works h2{
-        font-size:20px;
+        font-size:15px;
     }
 
     .work img{
-        width:297px !important;
+        width:197px !important;
+        height:125px !important;
         padding:0;
         margin:0;
     }
