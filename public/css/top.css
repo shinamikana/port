@@ -736,6 +736,7 @@ html,body{
     }
 
     #mobileName{
+        display:block;
         width:100%;
     }
 
@@ -752,7 +753,12 @@ html,body{
         height:300px !important;
     }
 
+    .skill{
+        margin-top:50px;
+    }
+
     .skill div{
+        margin:0;
         height:50px;
         font-size:30px;
         width:100%;
