@@ -43,7 +43,7 @@
             <div id="jqueryDiv"><span id="exMark">!</span><span id="jquery">jQuery</span></div>
             <div id="node"><span id="nodeSpan">node.js</span> <span id="wave1"><i class="fas fa-broadcast-tower"></i></span></div>
             <div id="php"><span id="phpSpan">PHP</span> <span id="wave2"><i class="fas fa-broadcast-tower"></i></span></div>
-            <div>Git</div>
+            <div id="gitDiv"><span id="git">Git</span> <span id="push">PUSH</span> <span id="pull">PULL</span></div>
         </div>
     </div>
 
@@ -86,6 +86,15 @@
         <span class="rainw rw1">●</span><span class="rainw rw2">●</span><span class="rainw rw3">●</span><span class="rainw rw4">●</span><span class="rainw rw5">●</span>
     </div>
     <script>
+        window.addEventListener('load',function(){
+            typewriter({
+            el:'#typewrite',
+            string:'Kenji Iwasaki Who?',
+            speed:70,
+            });
+
+        });
+
         const typewriter = (param)=>{
             let el = document.querySelector(param.el);
             let speed = param.speed;
@@ -98,11 +107,6 @@
             });
         }
 
-        typewriter({
-            el:'#typewrite',
-            string:'Kenji Iwasaki Who?',
-            speed:70,
-        });
         
         let teach = document.getElementById('teach');
         let arrow = document.getElementById('arrow');

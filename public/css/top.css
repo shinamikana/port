@@ -393,6 +393,10 @@ html,body{
     font-family: 'Alfa Slab One', cursive;
 }
 
+.fa-wave-square{
+    color:white;
+}
+
 #node{
     position: relative;
 }
@@ -452,6 +456,18 @@ html,body{
     to{
         opacity:1;
     }
+}
+
+#git{
+    opacity:0;
+}
+
+#push{
+    opacity:0;
+}
+
+#puu{
+    opacity:0;
 }
 
 .page3 h1{
