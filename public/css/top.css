@@ -239,6 +239,7 @@ html,body{
     font-family: 'Alfa Slab One', cursive;
     letter-spacing: 2px;
     font-weight:bold;
+    text-shadow:3px 3px 1px gray;
 }
 
 #mobileName{
@@ -432,11 +433,11 @@ html,body{
 }
 
 .wave{
-    animation:wave 1s ease 1s 4 forwards;
+    animation:wave 1s ease 1s 3 forwards;
 }
 
 .spanFade{
-    animation:fadeIn1 8s ease 1s 1 forwards;
+    animation:fadeIn1 5s ease 1s 1 forwards;
 }
 
 @keyframes wave{
@@ -685,7 +686,11 @@ html,body{
 }
 
 .fa-twitter-square:hover{
-    color:green;
+    color:white;
+}
+
+.fa-envelope:hover{
+    color:white;
 }
 
 .info a{
