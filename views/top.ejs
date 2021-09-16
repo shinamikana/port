@@ -90,7 +90,7 @@
             typewriter({
             el:'#typewrite',
             string:'Kenji Iwasaki Who?',
-            speed:70,
+            speed:80,
             });
 
         });
@@ -100,7 +100,7 @@
             let speed = param.speed;
             let string = param.string.split('');
 
-            string.forEach((char, index) => {
+            string.forEach((char, index) => { 
                setTimeout(() => {
                el.textContent += char;
              }, speed * index);
@@ -196,7 +196,13 @@
                             $('#wave1').addClass('wave');
                             $('#wave2').addClass('wave');
                             $('#nodeSpan').addClass('spanFade');
-                            $('#phpSpan').addClass('spanFade');
+                            $('#phpSpan').addClass('spanFade').delay(4000).queue(function(){
+                                $('#pull').addClass('pullAc').delay(1700).queue(function(){
+                                    $('#push').addClass('pushAc').delay(2700).queue(function(){
+                                        $('#git').addClass('gitAc').dequeue();
+                                    }).dequeue();
+                                });
+                            });
                         }).dequeue();
                     });
                     $('#exMark').delay(500).show(100);

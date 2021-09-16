@@ -432,7 +432,7 @@ html,body{
 }
 
 .wave{
-    animation:wave 1s ease 1s 5 forwards;
+    animation:wave 1s ease 1s 4 forwards;
 }
 
 .spanFade{
@@ -458,16 +458,98 @@ html,body{
     }
 }
 
+#gitDiv{
+    position: relative;
+    text-align: center;
+}
+
 #git{
+    position: absolute;
+    left:0;
+    right:0;
+    margin:0 auto;
     opacity:0;
+}
+
+.gitAc{
+    animation:giting 1s ease 1s 1 forwards;
+}
+
+@keyframes giting{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        opacity:1;
+        transform: rotate(360deg);
+    }
 }
 
 #push{
+    position: absolute;
+    left:0;
+    right:0;
+    margin:0 auto;
     opacity:0;
 }
 
-#puu{
+.pushAc{
+    animation:push 2s ease 0s 1 forwards;
+}
+
+@keyframes push{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+        left:50%;
+    }
+}
+
+#pull{
+    position: absolute;
+    left:0;
+    right:0;
+    margin:0 auto;
     opacity:0;
+}
+
+.pullAc{
+    animation:pull 2s ease 1s 1 forwards;
+}
+
+@keyframes pull{
+    from{
+        opacity:1;
+        right:50%;
+    }
+    to{
+        opacity:0;
+        left:0;
+    }
+}
+
+@keyframes rightRotate{
+    from{
+        opacity:1;
+        transform:rotate(0);
+    }
+    to{
+        transform:rotate(360deg);
+        opacity:0;
+    }
+}
+
+@keyframes leftRotate{
+    from{
+        transform:rotate(0);
+        opacity:1;
+    }
+    to{
+        transform:rotate(-360px) ;
+        opacity:0;
+    }
 }
 
 .page3 h1{
