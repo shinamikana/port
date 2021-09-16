@@ -41,8 +41,8 @@
         <div class="skill" id="skill">
             <div id="js" class="js"><span>J</span><span>a</span><span>v</span><span>a</span> <span>S</span><span>c</span><span>r</span><span>i</span><span>p</span><span>t</span></div>
             <div id="jqueryDiv"><span id="exMark">!</span><span id="jquery">jQuery</span></div>
-            <div>node.js</div>
-            <div>PHP</div>
+            <div id="node"><span id="nodeSpan">node.js</span> <span id="wave1"><i class="fas fa-broadcast-tower"></i></span></div>
+            <div id="php"><span id="phpSpan">PHP</span> <span id="wave2"><i class="fas fa-broadcast-tower"></i></span></div>
             <div>Git</div>
         </div>
     </div>
@@ -178,6 +178,7 @@
                 }
             });
 
+            //プログラミング言語のアニメーション
             let i = 9;
             const jsSlide = ()=>{
                 $('.js').find('span').eq(i).addClass('jsSkill');
@@ -187,7 +188,12 @@
                     clearTimeout(timerJs);
                     $('#jquery').delay(200).slideDown(500).delay(800).queue(function(){
                         $('#exMark').hide();
-                        $(this).addClass('jqslide').dequeue();
+                        $(this).addClass('jqslide').delay(4400).queue(function(){
+                            $('#wave1').addClass('wave');
+                            $('#wave2').addClass('wave');
+                            $('#nodeSpan').addClass('spanFade');
+                            $('#phpSpan').addClass('spanFade');
+                        }).dequeue();
                     });
                     $('#exMark').delay(500).show(100);
                 }
