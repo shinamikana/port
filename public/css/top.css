@@ -276,7 +276,6 @@ html,body{
 }
 
 #skillh2{
-    margin-top:100px;
     font-size:50px;
     text-align: center;
     color:white;
@@ -288,7 +287,7 @@ html,body{
     width:100%;
     flex-wrap:wrap;
     text-align: center;
-    margin-top:100px;
+    margin-top:70px;
     position: relative;
 }
 
