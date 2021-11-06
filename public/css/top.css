@@ -843,10 +843,10 @@ html,body{
 }
 
 @keyframes raining{
-    from{
+    0%{
         top:0;
     }
-    to{
+    100%{
         top:100%;
     }
 }
