@@ -844,9 +844,11 @@ html,body{
 
 @keyframes raining{
     0%{
+        position: fixed;
         top:0;
     }
     100%{
+        position: fixed;
         top:100%;
     }
 }
