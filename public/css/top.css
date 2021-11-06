@@ -733,7 +733,6 @@ html,body{
 .rain{
     position:fixed;
     color:black;
-    top:0;
     opacity:0.4;
     font-weight: lighter;
     z-index:0;
