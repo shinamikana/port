@@ -761,47 +761,47 @@ html,body{
 .r1{
     left:150px;
     font-size:30px;
-    animation:raining 0.49s linear 0s infinite forwards;
+    animation:raining 0.49s linear 0.5s infinite forwards;
     font-size:25px;
 }
 
 .r2{
     font-size:32px;
     right:50px;
-    animation:raining 0.42s linear 0s infinite forwards;
+    animation:raining 0.42s linear 1s infinite forwards;
 }
 
 .r3{
     left:500px;
     font-size:25px;
-    animation:raining 0.42s linear 0s infinite forwards;
+    animation:raining 0.42s linear 1.7s infinite forwards;
 }
 
 .r4{
     right:500px;
     font-size:30px;
-    animation:raining 0.45s linear 0s infinite forwards;
+    animation:raining 0.45s linear 2s infinite forwards;
     opacity:0.3;
 }
 
 .r5{
     right:800px;
     font-size:30px;
-    animation:raining 0.38s linear 0s infinite forwards;
+    animation:raining 0.38s linear 2.1s infinite forwards;
     opacity: 0.2;
 }
 
 .r6{
     left:300px;
     font-size:30px;
-    animation:raining 0.43s linear 0s infinite forwards;
+    animation:raining 0.43s linear 1.8s infinite forwards;
     opacity: 0.3;
 }
 
 .r7{
     font-size:32px;
     right:200px;
-    animation:raining 0.4s linear 0s infinite forwards;
+    animation:raining 0.4s linear 2.7s infinite forwards;
 }
 
 .rw1{
