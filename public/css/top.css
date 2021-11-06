@@ -731,7 +731,7 @@ html,body{
 }
 
 .rain{
-    position: fixed;
+    position:fixed;
     color:black;
     top:0;
     opacity:0.4;
@@ -847,10 +847,10 @@ html,body{
 
 @keyframes raining{
     0%{
-        transform: translateY(0vw);
+        top:0;
     }
     100%{
-        transform: translateY(100vw);
+        top:100%;
     }
 }
 
