@@ -724,6 +724,7 @@ html,body{
 }
 
 #rains{
+    position: fixed;
     display:none;
     height:100%;
     width:100%;
