@@ -736,6 +736,7 @@ html,body{
     opacity:0.4;
     font-weight: lighter;
     z-index:0;
+    height:100%;
 }
 
 .rainw{
