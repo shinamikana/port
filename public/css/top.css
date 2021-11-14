@@ -599,11 +599,11 @@ html,body{
     opacity:0;
 }
 
-#unknown2{
-    display:inline-block;
+#appport{
+    display: inline-block;
     height:300px;
     width:400px;
-    border:1px solid black;
+    border:1px solid white;
     text-align: center;
     transform:translate(50px,0);
     opacity:0;
@@ -916,7 +916,7 @@ html,body{
         width:200px;
         display:flex;
         flex-flow: column;
-        height:300px !important;
+        height:450px !important;
     }
 
     .skill{
@@ -989,6 +989,13 @@ html,body{
     }
 
     #rtablePHP{
+        margin:0;
+        padding:0;
+        width:200px;
+        height:150px;
+    }
+
+    #appport{
         margin:0;
         padding:0;
         width:200px;
