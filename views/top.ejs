@@ -118,6 +118,8 @@
             let speed = param.speed;
             let string = param.string.split('');
 
+            //charは現在処理されている配列の文字
+            //indexは配列のインデックス番号
             string.forEach((char, index) => {
                 setTimeout(() => {
                     el.textContent += char;
