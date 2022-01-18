@@ -13,17 +13,29 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div class="page0" id="page0">
+        <div id="page0Click" class="shake">
+            <p id="click">CLICK</p>
+            <p id="down">↓</p>
+        </div>
+        <img src="/images/light.png" alt="懐中電灯" id="flashlight">
+    </div>
     <div class="page1" id="page1">
-        <img src="/images/publicdomainq-0053249agt.jpg" alt="" id="page1img">
-        <div id="search"><span id="typewrite"></span><button onclick="hiden()">Search</button></div>
-        <h1 id="teach">I'll teach you</h1>
-        <i class="fas fa-chevron-down" id="arrow"></i>
+        <div id="light"></div>
+        <div id="beamWrapper">
+            <div id="beam"></div>
+        </div>
+        <i class="fas fa-bolt" id="bolt"></i>
+        <div id="powerWrap">
+            <span class="fas fa-power-off" id="power"></span>
+            <div id="backPower"></div>
+            </div>
     </div>
 
     <div class="page2 afterPage">
@@ -46,8 +58,6 @@
                 <span>S</span><span>c</span><span>r</span><span>i</span><span>p</span><span>t</span>
             </div>
             <div id="jqueryDiv"><span id="exMark">!</span><span id="jquery">jQuery</span></div>
-            <div id="node"><span id="nodeSpan">node.js</span> <span id="wave1"><i
-                        class="fas fa-broadcast-tower"></i></span></div>
             <div id="php"><span id="phpSpan">PHP</span> <span id="wave2"><i class="fas fa-broadcast-tower"></i></span>
             </div>
             <div id="gitDiv"><span id="git">Git</span> <span id="push">PUSH</span> <span id="pull">PULL</span></div>
@@ -104,53 +114,31 @@
             class="rainw rw4">●</span><span class="rainw rw5">●</span>
     </div>
     <script>
-        window.addEventListener('load', function () {
-            typewriter({
-                el: '#typewrite',
-                string: 'Kenji Iwasaki Who?',
-                speed: 80,
-            });
+        let power = document.getElementById('powerWrap');
+        p1 = document.getElementById('page0');
+        p1hi = p1.clientHeight - 200;
+        p1wh = p1.clientWidth - 200;
+        let rWidth = getRandomInt(p1wh);
+        let rHeight = getRandomInt(p1hi);
+        power.style.top = rHeight + 'px';
+        power.style.left = rWidth + 'px';
 
-        });
-
-        const typewriter = (param) => {
-            let el = document.querySelector(param.el);
-            let speed = param.speed;
-            let string = param.string.split('');
-
-            //charは現在処理されている配列の文字
-            //indexは配列のインデックス番号
-            string.forEach((char, index) => {
-                setTimeout(() => {
-                    el.textContent += char;
-                }, speed * index);
-            });
+        function getRandomInt($max) {
+            return Math.floor(Math.random() * $max);
         }
 
+        let light = document.getElementById('light');
+        let beam = document.getElementById('beamWrapper');
+        window.onload = function () {
+            document.body.addEventListener('mousemove', function (e) {
+                let mX = e.clientX;
+                let mY = e.clientY;
+                light.style.top = mY - 75 + 'px';
+                light.style.left = mX - 75 + 'px';
+                beam.style.top = mY + 300 + 'px';
+                beam.style.left = mX - 200 + 'px';
 
-        let teach = document.getElementById('teach');
-        let arrow = document.getElementById('arrow');
-        let search = document.getElementById('search');
-        let rain = document.getElementById('rains');
-        const hiden = () => {
-            search.classList.add('fadeOut');
-            teach.classList.add('fade');
-            show();
-            rain.style.display = 'block';
-        }
-
-        let after = document.getElementsByClassName('afterPage');
-        let page1img = document.getElementById('page1img');
-        let afterLen = 0;
-        const show = () => {
-            after[afterLen].style.display = 'block';
-            afterLen++;
-            const timer2 = setTimeout(show, 300);
-            if (afterLen == after.length) {
-                clearTimeout(timer2);
-                arrow.style.opacity = 0.8;
-                page1img.classList.add('page1imgFade');
-            }
+            });
         }
 
         let flag = false;
@@ -229,6 +217,55 @@
                 }
             }
 
+            $('.page1').find('#bolt').on('click', function () {
+                $('.page1').addClass('flash').delay(200).queue(function () {
+                    $(this).removeClass('flash').dequeue();
+                });
+            });
+
+            $(document).ready(function () {
+                $('#flashlight').addClass('drop');
+            });
+
+            $('#flashlight').on('click', function () {
+                $('#flashlight').addClass('hand').delay(500).queue(function () {
+                });
+            });
+
+            let lightAfterFunc = function () {
+                $('#flashlight').on('animationend webkitAnimationEnd', function () {
+                    $('.page0').hide().delay(500).queue(function () {
+                        $('.page1').show();
+                    });
+                });
+            }
+
+            $('#flashlight').on('animationend webkitAnimationEnd', function () {
+                $('#page0Click').fadeIn();
+                lightAfterFunc();
+            });
+
+            $('#power').on('mousedown touchstart', function () {
+                window.i = 0;
+                window.powerInterval = setInterval(function (i) {
+                    window.i = window.i + 2;
+                    console.log(window.i);
+                    $('#backPower').css('height', window.i);
+                    if (window.i >= 100) {
+                        clearInterval(window.powerInterval);
+                        $('#light').fadeOut();
+                        $('#beam').fadeOut();
+                        $(this).fadeOut(1000);
+                        $('.page1').fadeOut(1000);
+                        $('.afterPage').fadeIn(3000);
+                        $('#rains').fadeIn(3000);
+                    }
+                }, 50);
+            }).on('mouseup mouseleave touchend', function (i) {
+                clearInterval(window.powerInterval);
+                $('#backPower').css('height',0);
+                window.i = 0;
+            });
         });
     </script>
 </body>
