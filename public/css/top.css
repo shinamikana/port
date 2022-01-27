@@ -9,6 +9,16 @@ html,body{
     box-sizing: border-box;
 }
 
+@font-face{
+    font-family: 'Amatic SC';
+    src:url('../AmaticSC-Regular.ttf');
+}
+
+h1{
+    border-top:1px solid white;
+    border-bottom:1px solid white;
+}
+
 .page0{
     position: relative;
     height:100%;
@@ -20,7 +30,7 @@ html,body{
     height:20%;
     position:absolute;
     top:-10%;
-    left:49%;
+    left:50%;
     transform: translate(-50%,-50%);
     cursor: pointer;
 }
@@ -34,20 +44,20 @@ html,body{
 
 @keyframes drop{
     0%{
+        transform:translate(-50%,-50%);
         top:-10%;
     }
     25%{
         top:50%;
     }
     50%{
-        transform: rotate(-30deg);
-        left:46%;
+        transform:translate(-50%,-50%) rotate(-10deg);
+        top:58%;
     }
 
     100%{
-        transform: rotate(-30deg);
-        left:46%;
-        top:50%;
+        transform:translate(-50%,-50%) rotate(-10deg);
+        top:58%;
     }
 }
 
@@ -56,7 +66,7 @@ html,body{
     color:white;
     position: absolute;
     top:35%;
-    left:49.9%;
+    left:50%;
     transform: translate(-50%,-50%);
     line-height: 1rem;
     display: none;
@@ -72,6 +82,39 @@ html,body{
 
 #click{
     font-size:4rem;
+}
+
+#skipP{
+    position: fixed;
+    bottom:1rem;
+    right:1rem;
+    z-index:101;
+    width:6rem;
+    color:white;
+    text-align:center;
+    font-size:2rem;
+    cursor: pointer;
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+    border:1px solid white;
+}
+
+.skipA{
+    animation:0.5s skipA;
+    animation-iteration-count: 3;
+}
+
+@keyframes skipA{
+    0%{
+        bottom:1rem;
+    }
+    50%{
+        bottom:2rem;
+    }
+    100%{
+        bottom:1rem;
+    }
 }
 
 #down{
@@ -139,12 +182,26 @@ html,body{
     z-index:-1;
     height:0%;
     width:100%;
-    background-color: white;
+    background-color: black;
 }
 
 #power{
     z-index:100;
     font-size:4rem;
+}
+
+.changePower{
+    animation:4s changePowerA;
+    animation-fill-mode: forwards;
+}
+
+@keyframes changePowerA{
+    from{
+        color:black;
+    }
+    to{
+        color:white;
+    }
 }
 
 #light{
@@ -159,21 +216,46 @@ html,body{
     border:15px solid gray;
 }
 
-#beamWrapper{
+#beam{
     position:fixed;
     top:-100%;
     left:-100%;
-    width:1000px;
-    height:1000px;
+    margin:0 auto;
+    transform:rotate(0deg);
+    transform-origin: center top;
+    height:150%;
+    width:150px;
+    background-color: rgba(255,255,255,0.15);
+    z-index: 1;
+    border-radius:0 0 25% 25%;
 }
 
-#beam{
-    height:100px;
-    width:1000px;
-    background-color: rgba(255,255,255,0.15);
-    border-radius: 0 100% 100% 0;
-    z-index:2;
-    transform: rotate(50deg);
+.beamRight{
+    animation:0.2s beamRight;
+    animation-fill-mode: forwards;
+}
+
+@keyframes beamRight{
+    from{
+        transform:rotate(-20deg);
+    }
+    to{
+        transform:rotate(20deg);
+    }
+}
+
+.beamLeft{
+    animation:0.2s beamLeft;
+    animation-fill-mode: forwards;
+}
+
+@keyframes beamLeft{
+    from{
+        transform:rotate(20deg);
+    }
+    to{
+        transform:rotate(-20deg);
+    }
 }
 
 #bolt{
@@ -199,33 +281,6 @@ html,body{
     }
 }
 
-.page1imgFade{
-    animation:imgFade 2s ease 0s 1 forwards;
-    -webkit-user-drag: none;
-}
-
-@keyframes imgFade{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:0.8;
-    }
-}
-
-.fade{
-    animation:fade 1s ease 0s 1 forwards;
-}
-
-@keyframes fade{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
-
 .none{
     opacity:0;
 }
@@ -239,39 +294,71 @@ html,body{
     }
 }
 
-.fa-chevron-down{
-    display:inline-block;
-    position: absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    margin:0 auto;
-    font-size:50px;
-    height:50px;
-    width:50px;
-    line-height: 50px;
-    text-align: center;
-    opacity:0;
-    color:black;
-    animation: upDown 0.7s ease 0s infinite alternate;
-    z-index:50;
+.page1H{
+    position: relative;
+    height:100%;
+    width:100%;
+    margin:0;
 }
 
-@keyframes upDown {
-    0% {
-        bottom:20px;
-    }
-    100% {
-        bottom:10px;
-    }
+#HRight{
+    float: right;
+    width:50%;
+    height:100%;
+}
+
+#welcome{
+    position: absolute;
+    top:50%;
+    left:75%;
+    transform:translate(-50%,-50%);
+    height:7rem;
+    width:50%;
+    display: inline-block;
+    text-align: center;
+    font-size:5rem;
+    font-family: 'Amatic SC', cursive;
+    color:white;
+    background-color:black;
+    border:1px solid white;
+    margin:0;
+}
+
+#H1Me{
+    position: absolute;
+    left:0;
+    width:60%;
+    height:100%;
+    object-fit: cover;
 }
 
 .page2{
     position: relative;
-    height:200%;
+    height:auto;
+    min-height:100%;
     width:100%;
+    font-family: 'Amatic SC', cursive;
     background-color:gray;
-    font-family: 'IBM Plex Mono', monospace;
+    margin:0;
+}
+
+#umbrella{
+    position: fixed;
+    top:5%;
+    right:5%;
+    color:white;
+    background-color:black;
+    padding:0.5rem;
+    border-radius: 10px;
+    font-size:2rem;
+    cursor: pointer;
+    border:1px solid white;
+    z-index:999;
+}
+
+.changeUmbrella{
+    color:black !important;
+    background-color:rgba(255,255,255,0.8) !important;
 }
 
 .page2 h1{
@@ -286,19 +373,10 @@ html,body{
     text-align: center;
     background-image: url(/images/1.jpg);
     background-size:cover;
-    width:100%;
-    height:600px;
+    width:50%;
+    height:30%;
     position: relative;
-    border:50px solid gray;
-}
-
-.icon img{
-    height:40%;
-    width:90%;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:50px;
-    object-fit: cover;
+    margin:0 auto;
 }
 
 .page2 .text p{
@@ -319,29 +397,20 @@ html,body{
     flex-wrap: wrap;
 }
 
-#maybe{
-    font-size:35px;
-    line-height:15px;
-    font-family: 'Shadows Into Light', cursive;
-    color:black;
-    position: relative;
-    top:0;
-}
-
 .text #year{
     font-size:23px;
 }
 
 #name{
     position: absolute;
-    top:30px;
-    left:510px;
-    font-size:51px;
+    top:0%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-size:2rem;
     color:black;
-    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Amatic SC', cursive;
     letter-spacing: 2px;
     font-weight:bold;
-    text-shadow:3px 3px 1px gray;
 }
 
 #mobileName{
@@ -372,12 +441,14 @@ html,body{
 
 .page3{
     position: relative;
-    height:100%;
+    height:auto;
     width:100%;
     background-color:gray;
+    padding-bottom:3rem;
+    margin:0;
 }
 
-#skillh2{
+#skillh1{
     font-size:50px;
     text-align: center;
     color:white;
@@ -389,8 +460,8 @@ html,body{
     width:100%;
     flex-wrap:wrap;
     text-align: center;
-    margin-top:70px;
-    position: relative;
+    align-items: center;
+    justify-content: center;
 }
 
 .skill div{
@@ -399,7 +470,7 @@ html,body{
     border:1px solid gray;
     background-color:black;
     color:white;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Amatic SC', cursive;
     font-size:40px;
     margin:50px 0;
 }
@@ -492,7 +563,7 @@ html,body{
     font-size: 50px;
     display: none;
     color:red;
-    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Amatic SC', cursive;
 }
 
 .fa-wave-square{
@@ -660,20 +731,20 @@ html,body{
     text-align: center;
     margin-top:0;
     background-color: black;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Amatic SC', cursive;
 }
 
 .work{
-    position:absolute;
-    top:200px;
-    right:0;
-    left:0;
     display:flex;
+    flex-wrap:wrap;
     margin-left:auto;
     margin-right:auto;
-    width:1180px;
-    border:1px solid white;
+    width:auto;
+    height:auto;
+    border-top:1px solid white;
+    border-bottom:1px solid white;
     z-index:1;
+    text-align: center;
 }
 
 .work a{
@@ -681,34 +752,19 @@ html,body{
     text-decoration: none;
 }
 
-#rtable{
-    display:inline-block;
-    height:300px;
-    width:400px;
-    border:1px solid white;
-    text-align: center;
-    transform:translate(50px,0);
-    opacity:0;
-}
-
-#rtablePHP{
-    display: inline-block;
-    height:300px;
-    width:400px;
-    border:1px solid white;
-    text-align: center;
-    transform:translate(50px,0);
-    opacity:0;
+.works{
+    margin: 0 auto;
 }
 
 #appport{
     display: inline-block;
-    height:300px;
-    width:400px;
+    height:10rem;
+    width:10rem;
     border:1px solid white;
     text-align: center;
     transform:translate(50px,0);
     opacity:0;
+    overflow: hidden;
 }
 
 .slideShow{
@@ -732,15 +788,15 @@ html,body{
     text-align: center;
     background-color: black;
     border:1px solid white;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Amatic SC', cursive;
     color:white;
     margin-bottom:0;
     letter-spacing: 2px;
 }
 
 .work img{
-    width:388px;
-    height:258px;
+    width:10rem;
+    height:9rem;
     opacity:0.7;
     object-fit: cover;
 }
@@ -751,10 +807,11 @@ html,body{
 
 .page4{
     position: relative;
-    height:100%;
+    height:auto;
     width:100%;
     background-color: gray;
     text-align: center;
+    padding-bottom:10rem;
 }
 
 .page4 h1{
@@ -762,7 +819,8 @@ html,body{
     color:white;
     margin-top:0;
     background-color: black;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Amatic SC', cursive;
+    height:auto;
 }
 
 .page4 i{
@@ -770,7 +828,7 @@ html,body{
 }
 
 .page4 p{
-    font-size:30px;
+    font-size:1rem;
 }
 
 .info{
@@ -803,13 +861,90 @@ html,body{
 }
 
 .round{
-    position: absolute;
+    position:relative;
     bottom:10px;
     z-index:5;
     width:100%;
     height:100px;
     background-color:dimgray;
     border-radius: 50%;
+}
+
+.rainT{
+    position: absolute;
+    color:black;
+    transform:rotateX(50deg);
+}
+
+#rainT1{
+    top:50%;
+    left:10%;
+    font-size:1rem;
+    animation:2s rainTA;
+    animation-iteration-count: infinite;
+}
+
+#rainT2{
+    top:60%;
+    right:15%;
+    font-size:1rem;
+    animation:1.4s rainTA;
+    animation-iteration-count: infinite;
+}
+
+#rainT3{
+    top:50%;
+    left:60%;
+    font-size:1rem;
+    transform:translate(-50%,-50%) rotateX(50deg);
+    animation:1.2s rainTA;
+    animation-iteration-count: infinite;
+}
+
+#rainT4{
+    bottom:10%;
+    left:30%;
+    font-size:1rem;
+    animation:1.7s rainTA;
+    animation-iteration-count: infinite;
+}
+
+#rainT5{
+    top:30%;
+    left:40%;
+    font-size:1rem;
+    animation:1s rainTA;
+    animation-iteration-count: infinite;
+}
+
+#rainT6{
+    top:50%;
+    left:45%;
+    transform:translate(-50%,-50%) rotateX(50deg);
+    font-size:1rem;
+    animation:1.85s rainTA;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rainTA{
+    0%{
+        opacity:0;
+    }
+    10%{
+        opacity:0.75;
+    }
+    20%{
+        opacity:0;
+    }
+    80%{
+        opacity:0;
+    }
+    90%{
+        opacity:0.75;
+    }
+    100%{
+        opacity:0;
+    }
 }
 
 .ground{
