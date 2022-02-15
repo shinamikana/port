@@ -11,8 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/luxy.min.js"></script>
     <link rel="font" href="AmaticSC-Regular.ttf">
-    <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Rubik:wght@300&family=Zen+Kurenaido&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -35,70 +36,79 @@
         </div>
     </div>
 
-    <div class="page1H afterPage">
-        <img src="images/1.jpg" alt="" id="H1Me">
-        <i class="fas fa-umbrella" id="umbrella"></i>
-        <div id="HRight">
-            <h1 id="welcome"><span id="wel0">W</span><span id="wel1">E</span><span id="wel2">L</span><span
-                    id="wel3">C</span><span id="wel4">O</span><span id="wel5">M</span><span id="wel6">E</span></h1>
-            
-        </div>
-    </div>
-
-    <div class="page2 afterPage">
-        <h1>PROFILE</h1>
-        <div class="icon">
-            <p id="name">Kenji Iwasaki</p>
-        </div>
-
-        <div class="text">
-            <p id="mobileName">Kenji Iwasaki</p>
-            <p>Life:1994/09/27-</p>
-            <p>Programming:2021/04/20-</p>
-        </div>
-
-        <h1 id="skillh1">SKILL</h1>
-
-        <div class="skill" id="skill">
-            <div id="js" class="js"><span>J</span><span>a</span><span>v</span><span>a</span>
-                <span>S</span><span>c</span><span>r</span><span>i</span><span>p</span><span>t</span>
-            </div>
-            <div id="jqueryDiv"><span id="exMark">!</span><span id="jquery">jQuery</span></div>
-            <div id="php"><span id="phpSpan">PHP</span> <span id="wave2"><i class="fas fa-broadcast-tower"></i></span>
-            </div>
-            <div id="gitDiv"><span id="git">Git</span> <span id="push">PUSH</span> <span id="pull">PULL</span></div>
-        </div>
-    </div>
-
-    <div class="page3 afterPage">
-        <h1>WORKS</h1>
-        <div class="work" id="work">
-            <div id="appport" class="works">
-                <h2>AppPort</h2>
-                <a href="https://appport1.herokuapp.com/">
-                    <img src="/images/AppPort.png" alt="">
-                </a>
+    <div class="afterPage" id="luxy">
+        <div class="page1H afterPage">
+            <img src="images/1.jpg" alt="" id="H1Me" class="luxy-el" data-speed-y="8">
+            <i class="fas fa-umbrella" id="umbrella"></i>
+            <div id="HRight">
+                <h1 id="welcome" class="luxy-el" data-speed-y="15" data-offset="-25"><span id="wel0">W</span><span id="wel1">E</span><span id="wel2">L</span><span
+                        id="wel3">C</span><span id="wel4">O</span><span id="wel5">M</span><span id="wel6">E</span></h1>
+                <div id="gear1Div" class="luxy-el" data-speed-y="8" data-offset="-50">
+                    <i class="fas fa-cog" id="gear"></i>
+                </div>
+                <div id="gear2Div"class="luxy-el" data-speed-y="8" data-offset="-50">
+                    <i class="fas fa-cog" id="gear2"></i>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="page4 afterPage">
-        <h1>CONTACT</h1>
-        <div class="info">
-            <a href="mailto:iwasaki.web7110@gmail.com"><i class="fas fa-envelope"></i></a>
-            <p id="email">iwasaki.web7110@gmail.com</p>
-            <a href="https://twitter.com/tunanikan"><i class="fab fa-twitter-square"></i></a>
-            <p>@tunanikan</p>
-        </div>
-        <div class="ground">
-            <div class="round">
-                <span id="rainT1" class="rainT">○</span><span id="rainT2" class="rainT">○</span><span id="rainT3" class="rainT">○</span><span id="rainT4" class="rainT">○</span><span id="rainT5" class="rainT">○</span><span id="rainT6" class="rainT">○</span>
+        <div class="page2 afterPage">
+            <h1 class="luxy-el" data-speed-y="7" data-offset="0">PROFILE</h1>
+            <div id="page2Main" class="luxy-el" data-speed-y="5" data-offset="0">
+                <img src="" alt="one more photo" id="page2Img">
+                <div id="page2Text">
+                    <p>name : Kenji Iwasaki</p>
+                    <p>Live : Osaka</p>
+                    <p>DOB : 1994/09/27 -</p>
+                    <p id="page2Last">Program : 2021/04/20 -</p>
+                    
+                </div>
             </div>
         </div>
-    </div>
+        <div class="page2H afterPage">
+            <h1 id="skillh1" class="luxy-el" data-speed-y="7" data-offset="0">SKILL</h1>
+            <div class="skill" id="skill">
+                <div id="js" class="js"><span>J</span><span>a</span><span>v</span><span>a</span>
+                    <span>S</span><span>c</span><span>r</span><span>i</span><span>p</span><span>t</span>
+                </div>
+                <div id="jqueryDiv"><span id="exMark">!</span><span id="jquery">jQuery</span></div>
+                <div id="php"><span id="phpSpan">PHP</span>
+                </div>
+                <div id="gitDiv"><span id="git">Git</span> <span id="push">PUSH</span> <span id="pull">PULL</span></div>
+            </div>
+        </div>
 
-    <div class="page5 afterPage">
+        <div class="page3 afterPage">
+            <h1 class="luxy-el" data-speed-y="3" data-offset="0">WORKS</h1>
+            <div class="work" id="work">
+                <div id="appport" class="works luxy-el" data-speed-y="0" data-speed-x="11" data-horizontal="1">
+                    <h2>AppPort</h2>
+                    <a href="https://appport1.herokuapp.com/">
+                        <img src="/images/AppPort.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
 
+        <div class="page4 afterPage">
+            <h1>CONTACT</h1>
+            <div class="info">
+                <a href="mailto:iwasaki.web7110@gmail.com"><i class="fas fa-envelope"></i></a>
+                <p id="email">iwasaki.web7110@gmail.com</p>
+                <a href="https://twitter.com/tunanikan"><i class="fab fa-twitter-square"></i></a>
+                <p>@tunanikan</p>
+            </div>
+        </div>
+
+        <div class="page5 afterPage">
+            <div class="ground">
+                <div class="round">
+                    <span id="rainT1" class="rainT">○</span><span id="rainT2" class="rainT">○</span><span id="rainT3"
+                        class="rainT">○</span><span id="rainT4" class="rainT">○</span><span id="rainT5"
+                        class="rainT">○</span><span id="rainT6" class="rainT">○</span>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -110,14 +120,22 @@
             class="rainw rw4">●</span><span class="rainw rw5">●</span>
     </div>
     <script>
-        let power = document.getElementById('powerWrap');
-        p1 = document.getElementById('page0');
-        p1hi = document.body.clientHeight - 200;
-        p1wh = document.body.clientWidth - 200;
-        let rWidth = getRandomInt(p1wh);
-        let rHeight = getRandomInt(p1hi);
-        power.style.top = rHeight + 'px';
-        power.style.left = rWidth + 'px';
+        if(navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('Mobile') > 0 || navigator.userAgent.indexOf('iPad')){
+        }else{
+            luxy.init();
+        }
+    </script>
+    <script>
+        let randomDiv = function () {
+            let power = document.getElementById('powerWrap');
+            p1 = document.getElementById('page0');
+            p1hi = document.getElementById('page1').clientHeight - 200;
+            p1wh = document.getElementById('page1').clientWidth - 200;
+            let rWidth = getRandomInt(p1wh);
+            let rHeight = getRandomInt(p1hi);
+            power.style.top = rHeight + 'px';
+            power.style.left = rWidth + 'px';
+        }
 
         function getRandomInt($max) {
             return Math.floor(Math.random() * $max);
@@ -128,8 +146,10 @@
         let beam = document.getElementById('beam');
         let or = document.getElementById('or');
         let rotateI = 0;
+        let page1 = document.getElementById('page1');
         window.page1 = function () {
-            document.body.addEventListener('mousemove', function (e) {
+            randomDiv();
+            page1.addEventListener('mousemove', function (e) {
                 let mX = e.clientX;
                 let mY = e.clientY;
                 light.style.top = mY - 75 + 'px';
@@ -193,6 +213,15 @@
                 }
             });
 
+            $(window).on('scroll', function () {
+                let scrollVal = window.pageYOffset;
+                let scrollEle = $('#page2Main').offset().top;
+                let wHeight = $(window).height();
+                if (scrollVal > scrollEle - wHeight + 150 && !($('#page2Main').hasClass('coolRotate'))) {
+                    $('#page2Main').addClass('coolRotate');
+                }
+            });
+
             //プログラミング言語のアニメーション
             let i = 9;
             const jsSlide = () => {
@@ -203,18 +232,7 @@
                     clearTimeout(timerJs);
                     $('#jquery').delay(200).slideDown(500).delay(800).queue(function () {
                         $('#exMark').hide();
-                        $(this).addClass('jqslide').delay(4400).queue(function () {
-                            $('#wave1').addClass('wave');
-                            $('#wave2').addClass('wave');
-                            $('#nodeSpan').addClass('spanFade');
-                            $('#phpSpan').addClass('spanFade').delay(3500).queue(function () {
-                                $('#pull').addClass('pullAc').delay(2000).queue(function () {
-                                    $('#push').addClass('pushAc').delay(2700).queue(function () {
-                                        $('#git').addClass('gitAc').dequeue();
-                                    }).dequeue();
-                                });
-                            });
-                        }).dequeue();
+                        $(this).addClass('jqslide');
                     });
                     $('#exMark').delay(500).show(100);
                 }
@@ -240,8 +258,9 @@
             let lightAfterFunc = function () {
                 $('#flashlight').on('animationend webkitAnimationEnd', function () {
                     $('.page0').hide().delay(500).queue(function () {
-                        $('.page1').show();
-                        window.page1();
+                        $('.page1').show(function () {
+                            window.page1();
+                        });
                     });
                 });
             }
@@ -252,13 +271,12 @@
 
             window.i = 0;
 
-            $('#power').on('mousedown touchstart', function () {
+            $('#powerWrap').on('mousedown touchstart', function () {
                 clearInterval(window.powerMInterval);
                 $('#power').addClass('changePower');
                 window.powerInterval = setInterval(function (i) {
                     window.i = window.i + 2;
                     $('#backPower').css('height', window.i);
-
                     if (window.i >= 100) {
                         clearInterval(window.powerInterval);
                         $('#light').fadeOut();
@@ -267,28 +285,30 @@
                         $('.page1').fadeOut(1000);
                         $('.afterPage').fadeIn(3000);
                         $('#rains').fadeIn(3000);
+                        $('#welcome').slideDown();
                         page1HAnime();
                     }
                 }, 35);
             }).on('mouseup mouseleave touchend', function (i) {
                 clearInterval(window.powerInterval);
-                if (window.i < 100) {
-                    $('#backPower').css('height', 0);
-                    $('#power').removeClass('changePower');
-                    window.powerMInterval = setInterval(function () {
+                $('#backPower').css('height', 0);
+                $('#power').removeClass('changePower');
+                window.powerMInterval = setInterval(function () {
+                    if (window.i < 100 && window.i > 0) {
                         window.i = window.i - 2;
                         $('#backPower').css('height', window.i);
-                        if (window.i <= 0) {
-                            clearInterval(window.powerMInterval);
-                        }
-                    }, 35);
-                }
+                    } else {
+                        window.i = 0;
+                        clearInterval(window.powerMInterval);
+                    }
+                }, 35);
             });
 
             $('#skipP').on('click', function () {
                 $(this).addClass('skipA');
                 $('.page0').delay(500).fadeOut(1000, function () {
                     $('.afterPage').show();
+                    $('#welcome').slideDown();
                     page1HAnime();
                 });
                 $('#rains').fadeIn(3000);
@@ -296,21 +316,20 @@
 
             let page1HAnime = function () {
                 let i = 0;
-                let plusI = 0;
                 let $welcome = $('#welcome');
-                let font = ['Gill Sans', 'cursive', 'system-ui', 'Amatic SC', 'Comic Sans MS',"Annie Use Your Telescope"];
+                let font = ['Gill Sans', 'cursive', 'system-ui', 'Amatic SC', 'Comic Sans MS', "Annie Use Your Telescope"];
                 let welcomeA = setInterval(function () {
-                    if(i >= 29){
+                    if (i >= 23) {
                         j = 7;
-                    }else if (i >= 25) {
+                    } else if (i >= 20) {
                         j = 6;
-                    } else if (i >= 21) {
-                        j = 5;
                     } else if (i >= 17) {
+                        j = 5;
+                    } else if (i >= 14) {
                         j = 4;
-                    } else if (i >= 13) {
+                    } else if (i >= 11) {
                         j = 3;
-                    } else if (i >= 9) {
+                    } else if (i >= 8) {
                         j = 2;
                     } else if (i >= 5) {
                         j = 1;
@@ -321,19 +340,16 @@
                         let randI = Math.floor(Math.random() * 7);
                         $(`#wel${j}`).css('font-family', font[randI]);
                     }
-                    plusI++;
                     i++;
                     if (i >= 40) {
                         clearInterval(welcomeA);
                     }
-                    if (plusI >= 4) {
-                        plusI = 0;
-                    }
-                }, 90);
+                }, 100);
             }
 
             $('#umbrella').on('click', function () {
                 $('#rains').slideToggle(100);
+                $('.rainT').slideToggle();
                 $('#umbrella').toggleClass('changeUmbrella');
             });
         });

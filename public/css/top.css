@@ -17,10 +17,10 @@ html,body{
 h1{
     border-top:1px solid white;
     border-bottom:1px solid white;
+    box-shadow:2px 2px 2px darkgray;
 }
 
 .page0{
-    position: relative;
     height:100%;
     width:100%;
     background-color: black;
@@ -147,8 +147,8 @@ h1{
 }
 
 .page1{
+    position:absolute;
     user-select: none;
-    position:relative;
     height:100%;
     width:100%;
     background-color: black;
@@ -205,7 +205,7 @@ h1{
 }
 
 #light{
-    position:fixed;
+    position:absolute;
     top:-100%;
     right:-100%;
     height:150px;
@@ -217,7 +217,7 @@ h1{
 }
 
 #beam{
-    position:fixed;
+    position:absolute;
     top:-100%;
     left:-100%;
     margin:0 auto;
@@ -296,50 +296,102 @@ h1{
 
 .page1H{
     position: relative;
-    height:100%;
+    height:100vh;
     width:100%;
     margin:0;
+    overflow: hidden;
 }
 
 #HRight{
-    float: right;
-    width:50%;
+    position: absolute;
+    top:0;
+    right:0;
+    width:40%;
     height:100%;
 }
 
 #welcome{
     position: absolute;
-    top:50%;
-    left:75%;
-    transform:translate(-50%,-50%);
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto 10rem auto auto;
     height:7rem;
-    width:50%;
-    display: inline-block;
+    width:120%;
+    display: none;
     text-align: center;
     font-size:5rem;
     font-family: 'Amatic SC', cursive;
     color:white;
     background-color:black;
     border:1px solid white;
-    margin:0;
+    z-index:2;
+    animation:welA 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes welA{
+    from{
+        left:100%;
+        height:7rem;
+        width:120%;
+    }
+    to{
+        left:20%;
+    }
+}
+
+#gear1Div{
+    position: absolute;
+    bottom:-15rem;
+    right:-15rem;
+}
+
+#gear{
+    color:black;
+    font-size:30rem;
+    -webkit-text-stroke: 1px white;
+    animation:rotating 7s linear infinite;
+}
+
+#gear2Div{
+    position: absolute;
+    top:-15rem;
+    left:-15rem;
+    z-index:-1;
+}
+
+#gear2{
+    color:black;
+    font-size:30rem;
+    -webkit-text-stroke: 1px white;
+    animation:rRotating 7s linear infinite;
+}
+
+@keyframes rotating{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes rRotating{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(-360deg);
+    }
 }
 
 #H1Me{
-    position: absolute;
-    left:0;
     width:60%;
     height:100%;
     object-fit: cover;
-}
-
-.page2{
-    position: relative;
-    height:auto;
-    min-height:100%;
-    width:100%;
-    font-family: 'Amatic SC', cursive;
-    background-color:gray;
-    margin:0;
+    z-index:1;
 }
 
 #umbrella{
@@ -361,6 +413,19 @@ h1{
     background-color:rgba(255,255,255,0.8) !important;
 }
 
+.page2{
+    position: relative;
+    height:auto;
+    width:100%;
+    overflow: hidden;
+    font-family: 'Amatic SC', cursive;
+    background-color:black;
+    margin-top:10rem;
+    padding-bottom:20rem;
+    padding:0;
+    text-align: center;
+}
+
 .page2 h1{
     font-size:50px;
     margin-top:0;
@@ -369,67 +434,43 @@ h1{
     background-color: black;
 }
 
-.icon{
-    text-align: center;
-    background-image: url(/images/1.jpg);
-    background-size:cover;
-    width:50%;
-    height:30%;
-    position: relative;
-    margin:0 auto;
+#page2Main{
+    display:inline-block;
+    height: 100%;
+    width:70%;
+    border:1px solid white;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:10rem;
+    margin-top:5rem;
+    box-shadow:3rem 3rem 0px gray;
 }
 
-.page2 .text p{
+#page2Img{
+    float:left;
+    height:100%;
+    width:50%;
+    margin: 0;
+}
+
+#page2Text{
+    text-align: center;
+    float:right;
+    letter-spacing: 0.2rem;
+    height:100%;
+    width:50%;
+    margin: 0;
+}
+
+#page2Text p{
     margin:0;
-    padding:0;
-    width:50%;
-    background-color:black;
-    font-size:35px;
-    border:1px solid gray;
-    text-align: center;
-    color:white;
-    letter-spacing: 1px;
-    font-weight: lighter;
+    font-size:1.4rem;
+    color: white;
+    font-family: 'Rubik', sans-serif;
 }
 
-.text{
-    display:flex;
-    flex-wrap: wrap;
-}
-
-.text #year{
-    font-size:23px;
-}
-
-#name{
-    position: absolute;
-    top:0%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    font-size:2rem;
-    color:black;
-    font-family: 'Amatic SC', cursive;
-    letter-spacing: 2px;
-    font-weight:bold;
-}
-
-#mobileName{
-    display:none;
-}
-
-@keyframes flas-light{
-    0%{opacity:1;}
-    24% {opacity:1;}
-    25% {opacity:0.1;}
-    26% {opacity:1;}
-    50%  {opacity: 1;}
-    51%  {opacity: 0.1;}
-    52%  {opacity: 1;}
-    75% {opacity: 1;}
-    76% {opacity: 0.1;}
-    77% {opacity: 1;}
-    78% {opacity: 0.3;}
-    79% {opacity: 1;}
+.page2 p:not(#page2Last){
+    border-bottom:1px solid white;
 }
 
 #all{
@@ -443,8 +484,9 @@ h1{
     position: relative;
     height:auto;
     width:100%;
-    background-color:gray;
-    padding-bottom:3rem;
+    background-color:black;
+    padding-top:10rem;
+    padding-bottom:20rem;
     margin:0;
 }
 
@@ -453,6 +495,8 @@ h1{
     text-align: center;
     color:white;
     background-color: black;
+    font-family: 'Amatic SC', cursive;
+    margin-bottom:20rem;
 }
 
 .skill{
@@ -570,14 +614,6 @@ h1{
     color:white;
 }
 
-#node{
-    position: relative;
-}
-
-#nodeSpan{
-    opacity:0;
-}
-
 #wave1{
     position: absolute;
     top:-60px;
@@ -589,19 +625,6 @@ h1{
 
 #php{
     position: relative;
-}
-
-#phpSpan{
-    opacity:0;
-}
-
-#wave2{
-    position: absolute;
-    top:-60px;
-    right:0;
-    left:0;
-    margin: 0 auto;
-    opacity:0;
 }
 
 .wave{
@@ -641,7 +664,6 @@ h1{
     left:0;
     right:0;
     margin:0 auto;
-    opacity:0;
 }
 
 .gitAc{
@@ -732,6 +754,7 @@ h1{
     margin-top:0;
     background-color: black;
     font-family: 'Amatic SC', cursive;
+    margin-bottom:20rem;
 }
 
 .work{
@@ -752,34 +775,15 @@ h1{
     text-decoration: none;
 }
 
-.works{
-    margin: 0 auto;
-}
-
 #appport{
     display: inline-block;
     height:10rem;
     width:10rem;
     border:1px solid white;
     text-align: center;
-    transform:translate(50px,0);
-    opacity:0;
+    opacity: 1;
     overflow: hidden;
-}
-
-.slideShow{
-    animation:slideUp 1.5s ease 0.1s 1 forwards;
-}
-
-@keyframes slideUp{
-    from{
-        opacity:0;
-        transform:translate(50px,0);
-    }
-    to{
-        opacity:1;
-        transform:translate(0,0);
-    }
+    cursor: pointer;
 }
 
 .work h2{
@@ -809,7 +813,7 @@ h1{
     position: relative;
     height:auto;
     width:100%;
-    background-color: gray;
+    background-color: black;
     text-align: center;
     padding-bottom:10rem;
 }
@@ -829,31 +833,37 @@ h1{
 
 .page4 p{
     font-size:1rem;
+    color:white;
 }
 
 .info{
     display:inline-block;
     margin-top:50px;
     padding:10px;
-    border:1px solid black;
+    border:1px solid white;
     width:50%;
     user-select:text;
 }
 
 .fa-envelope{
     margin-top:50px;
+    color:white;
+}
+
+.fa-twitter-square{
+    color:white;
 }
 
 .fa-twitter-square:hover{
-    color:white;
+    color:gray;
 }
 
 .fa-envelope:hover{
-    color:white;
+    color:gray;
 }
 
 .info a{
-    color:black;
+    color:white;
 }
 
 #email{
@@ -861,13 +871,19 @@ h1{
 }
 
 .round{
-    position:relative;
-    bottom:10px;
+    position: relative;
     z-index:5;
     width:100%;
-    height:100px;
+    height:100%;
     background-color:dimgray;
     border-radius: 50%;
+}
+
+.page5{
+    position: relative;
+    width:100%;
+    height:50%;
+    background-color:black;
 }
 
 .rainT{
@@ -950,7 +966,7 @@ h1{
 .ground{
     position: absolute;
     bottom:0;
-    background-color:gray;
+    background-color:black;
     width:100%;
     height:100px;
     z-index:5;
@@ -963,13 +979,12 @@ h1{
 #rains{
     position: fixed;
     display:none;
-    height:100%;
-    width:100%;
 }
 
 .rain{
     position:fixed;
-    color:black;
+    top: -10%;
+    color:white;
     opacity:0.6;
     font-weight: lighter;
     z-index:0;
@@ -977,7 +992,7 @@ h1{
 
 .rainw{
     position: fixed;
-    color:black;
+    color:white;
     opacity:0;
     top:0;
     z-index:0;
@@ -1027,7 +1042,6 @@ h1{
     animation:raining 0.38s linear 2.1s infinite forwards;
     opacity: 0.2;
 }
-
 .r6{
     left:300px;
     font-size:30px;
@@ -1047,7 +1061,6 @@ h1{
     left:300px;
     animation:rainwing 5s ease 1s infinite forwards;
 }
-
 .rw2{
     font-size:40px;
     top:500px;
@@ -1082,322 +1095,36 @@ h1{
         top:0vh;
     }
     100%{
-        top:100vh;
+        top:98vh;
     }
 }
 
-@media(max-width:420px){
-
-    #teach{
-        text-align: center;
-    }
-
-    #search{
-        height:30px;
-        width:300px;
-        font-size:18px;
-    }
-
-    #typewrite{
-        display:inline-block;
-    }
-
-    #search button{
-        height:30px;
-        width:60px;
-        font-size:13px;
-    }
-
-    .page1{
-        position: relative;
+@media screen and (max-width:600px){
+    #H1Me{
+        position: absolute;
+        height:100%;
         width:100%;
+        z-index:0;
     }
 
-    #page1img{
-        width:100%;
-        object-fit:cover;
+    #gear2Div{
+        z-index:0;
     }
 
-    .page3{
-        width:100%;
+    #gear , #gear2{
+        color:rgba(0,0,0,0.5);
     }
-
-    .icon p{
-        display:none;
+    
+    #welcome{
+        height:4rem;
+        font-size:3rem;
     }
-
-    .icon{
-        border:none;
-        width:100%;
-        height:150px;
-    }
-
-    .icon img{
-        height:70%;
-        width:70%;
-    }
-
-    #mobileName{
-        display:block;
-        width:100%;
-    }
-
-    .page2 .text p{
-        width:100%;
-        font-size:20px;
+    
+    #page2Text p{
+        font-size:1rem;
     }
 
     .work{
-        top:100px;
-        width:200px;
-        display:flex;
-        flex-flow: column;
-        height:450px !important;
+        justify-content: center;
     }
-
-    .skill{
-        margin-top:50px;
-    }
-
-    .skill div{
-        margin-top:30px;
-        height:50px;
-        font-size:30px;
-        width:100%;
-    }
-
-    @keyframes jquerySlide{
-        0%{
-            left:0;
-            right:0;
-        }
-    
-        10%{
-            right:0%;
-            left:60%;
-        }
-    
-        20%{
-            left:0%;
-            right:60%;
-        }
-    
-        30%{
-            right:0%;
-            left:60%;
-        }
-    
-        50%{
-            left:0%;
-            right:60%;
-            font-size:30px;
-        }
-    
-        55%{
-            font-size: 38px;
-        }
-    
-        65%{
-            left:0%;
-            right:60%;
-            font-size:30px;
-        }
-    
-    
-        80%{
-            left:0;
-            right:0;
-        }
-    }
-
-    #exMark{
-        font-size: 40px;
-    }
-
-    .work{
-        width:200px !important;
-        height:auto;
-    }
-
-    #rtable{
-        height:150px !important;
-        width:200px !important;
-    }
-
-    #rtablePHP{
-        margin:0;
-        padding:0;
-        width:200px;
-        height:150px;
-    }
-
-    #appport{
-        margin:0;
-        padding:0;
-        width:200px;
-        height:150px;
-    }
-
-    .works h2{
-        font-size:15px;
-    }
-
-    .work img{
-        width:197px !important;
-        height:125px !important;
-        padding:0;
-        margin:0;
-    }
-
-    #unknown2{
-        display: none;
-    }
-
-    .info{
-        width:80%;
-    }
-
-    .info p{
-        font-size:15px;
-        text-align: center;
-    }
-
-    .round{
-        height:50px;
-    }
-
-    .ground{
-        height:50px;
-    }
-
-    .rainw{
-        transform: scale(30%);
-    }
-
-    .r1{
-        left:30px;
-    }
-
-    .r3{
-        left:110px;
-    }
-}
-
-@media(max-width:416px){
-
-    #search{
-        height:30px;
-        width:300px;
-        font-size:18px;
-    }
-
-    #search button{
-        height:30px;
-        width:80px;
-        font-size:15px;
-    }
-
-    #page1img{
-        width:100%;
-        object-fit:cover;
-    }
-
-    #unknown1{
-        display: none;
-    }
-
-    #unknown2{
-        display: none;
-    }
-
-    .work{
-        bottom:300px;
-        width:200px;
-        height:200px;
-    }
-
-    #rtable{
-        width:200px;
-        height:200px;
-    }
-
-    #rtable h2{
-        margin:0;
-    }
-
-    .works img{
-        height:160px;
-        width:200px;
-    }
-
-    .icon img{
-        height:70%;
-        width:70%;
-    }
-
-    .info{
-        width:80%;
-    }
-
-    .r5{
-        left:20px;
-    }
-}
-
-@media(max-width:480px){
-
-    #search{
-        height:30px;
-        width:350px;
-        font-size:20px;
-    }
-
-    #search button{
-        height:30px;
-        width:100px;
-        font-size:18px;
-    }
-
-    #page1img{
-        width:100%;
-        object-fit:cover;
-    }
-
-    #unknown1{
-        display: none;
-    }
-
-    #unknown2{
-        display: none;
-    }
-
-    .work{
-        bottom:300px;
-        width:300px;
-        height:200px;
-    }
-
-    #rtable{
-        width:300px;
-        height:200px;
-    }
-
-    #rtable h2{
-        margin:0;
-    }
-
-    .works img{
-        height:160px;
-        width:300px;
-    }
-
-    .icon img{
-        height:70%;
-        width:70%;
-    }
-
-    .info{
-        width:80%;
-    }
-
 }
