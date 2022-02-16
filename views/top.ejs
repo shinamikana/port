@@ -9,9 +9,9 @@
     <title>TOP</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/luxy.min.js"></script>
+    <script src="https://kit.fontawesome.com/c8be75dd2d.js" crossorigin="anonymous"></script>
     <link rel="font" href="AmaticSC-Regular.ttf">
     <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Rubik:wght@300&family=Zen+Kurenaido&display=swap" rel="stylesheet">
 </head>
@@ -120,7 +120,9 @@
             class="rainw rw4">●</span><span class="rainw rw5">●</span>
     </div>
     <script>
-        if(navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('Mobile') > 0 || navigator.userAgent.indexOf('iPad')){
+        if(navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('Mobile') > 0 || navigator.userAgent.indexOf('iPad') > 0){
+            let work = document.getElementById('work');
+            work.style.justifyContent = 'center';
         }else{
             luxy.init();
         }

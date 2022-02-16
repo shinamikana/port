@@ -4,6 +4,7 @@ const app = express();
 app.use(express.static('public'));
 
 app.get('/',(req,res)=>{
+  res.set({ 'Access-Control-Allow-Origin': '*' });
   res.render('top.ejs');
 });
 
